@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+body{
+    font-family: 'Questrial', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fs-4 {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.img-responsive {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.text-center {
+    font-size: 40px !important;
+    color: #C2185b;
+}
+
+.col-9 {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+}
+
+header {
+    position: relative;
+    box-shadow: 0px 5px 4px 0px rgb(63 63 63 / 27%);
+    width: 100%;
+    background-color: #fff;
+}
+aside {
+    min-height: 100vh;
+}
+
+
+
+/* codigo já implementado pela gama */
+
+.nav-pills .nav-link.active, .nav-pills .show.nav-link {
+    background-color: #C2185b;
+}
+
+.btn-primary{
+    background-color: #C2185B;
+    border-color: #C2185B;
+}
+
+.btn .btn-danger{
+    background-color: #C2185B;
+    color: #e55b92;
+}
+
+main.login {
+    width: 400px;
+}
+
+section.full{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 80vh;
+    padding: 50px 0;
+}
+
+article.evento {
+    width: 350px;
+}
+
+footer nav ul{
+    list-style: none;
+    display: flex;
+}
+
+footer nav ul li  {
+    padding: 10px;
+}
+
+
+/* fim do codigo implementado pela gama */
+
+/* eventos mid page  */
+
+#container-eventos{
+  
+    font-display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-footer ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.img-banner{
+    width: 600px;
+}
+
+
+
+
+/* media screnn index e eventos e modal smartphones */
+
+@media only screen and (max-width: 600px) {
+    
+  
+    .nav-footer ul li{
+        width: 150px;
+    }
+  
+    footer{
+        max-width: 100%;
+    }
+
+    .img-footer{
+        width: 200px;
+    }
+    .img-banner{
+        display: none;
+    }
+  
+   
+
+}

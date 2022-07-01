@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Garden</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="addEventsIndex()">
+   
+    <header class="d-flex justify-content-center align-items-center">
+        <img class="img-logo" src="img/Sound-logo (1).png" width="300" alt="">
+    </header>
+    <main>
+        <!-- banner-rotativo  -->
+        <section id="slide-baner" class="container carousel slide full d-flex justify-content-center align-items-center" data-ride="carousel">
+            <article class="carousel-inner">
+              <figure class="carousel-item active">
+                <img class="d-block w-100" src="./img/coala-festival-2021-scaled.jpg" alt="Banner-coala-fest">
+              </figure>
+              <figure class="carousel-item">
+                <img class="d-block w-100" src="./img/5482762.jpg" alt="Second slide">
+              </figure>
+              <figure class="carousel-item">
+                <img class="d-block w-100" src="./img/paradise-web-1.png" alt="Baneer-brasilia-event">
+              </figure>
+            </article>
+            <a class="carousel-control-prev" href="#slide-baner" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#slide-baner" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </section>
+        <!-- fim banner-rotativo  -->
+   
+        <section class="full">
+            <div class="container text-center">
+                <h2>Próximos eventos</h2>
+            </div>
+            <div id="container-eventos" class="d-flex justify-content-center align-items-center">
+                <!-- EVENTOS SAO ADICIONADOS DINAMICAMENTE AQUI PELO SCRIPT.JS -->
+            </div>
+            <div class="container text-center">
+                <a href="eventos.html" class="btn btn-secondary">ver todos os eventos</a>
+            </div>
+        </section>
+        <section id="text-container"  class="full d-flex justify-content-center align-items-center"
+            style="background-color: #f2f2f2; color: #555">
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col">
+                        <h2>A Sound Garden</h2>
+
+                        <p>Sound Garden é uma casa de show super descolada</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id autem, fugiat recusandae, totam
+                            inventore harum iste libero obcaecati neque fugit ipsam. Dolorum quae quis odio rem at eum
+                            cumque excepturi.</p>
+                        <p>Alias animi nostrum aperiam sapiente laudantium
+                            corporis esse voluptatem, repellendus nam exercitationem reprehenderit error. Maiores
+                            quibusdam molestias adipisci magni maxime explicabo voluptatibus ipsum delectus, cum soluta
+                            esse ab ducimus. Molestias facilis hic quod similique, voluptate porro architecto itaque
+                            odit dolore temporibus, dignissimos magni delectus in?</p>
+                        <p>Nemo excepturi soluta provident minima amet? Architecto
+                            distinctio molestiae nisi necessitatibus nesciunt possimus dignissimos consequatur iusto
+                            cupiditate quam accusantium tempora odio at deleniti explicabo voluptatum blanditiis natus
+                            qui, dolorem ea eius minima itaque aspernatur? Quia voluptatem ex, mollitia consequuntur
+                            quas incidunt, aliquid explicabo nesciunt hic nobis libero velit at reiciendis.</p>
+                    </div>
+                    <div class="col">
+                        <img class="img-banner" src="img/music.svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+
+ 
+    <footer>
+        <div id="div-footer" class="container d-flex justify-content-center align-items-center">
+            <a  href="#">
+                <img class="img-footer" src="img/Sound-logo-black (1).png" width="280px" alt="">
+            </a>
+            <nav class="nav-footer">
+                <ul>
+                    <li>
+                        <a href="eventos.html">eventos</a>
+                    </li>
+                    <li>
+                        <a href="admin.html">painel administrativo</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- modal -->
+    
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informe seus dados</h5>
+        <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" placeholder="Insira seu nome">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Email:</label>
+           <input type="email" class="form-control" id="email" placeholder="Insira seu email">
+          </div>
+        </form>
+        <div class="form-group">
+          <label for="message-text" class="col-form-label">Quantidade:</label>
+          <input type="text" class="form-control" id="quantidade" placeholder="Insira a quantidade de ingressos">
+        </div>
+      </form>
+        <div class="form-group">
+          <label for="message-text" class="col-form-label">ID do Evento:</label>
+         <input type="text" class="form-control" id="event-id" disabled>
+        </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" onclick="reservarIngresso()">Reservar</button>
+      </div>
+    </div>
+  </div>
+</div>   
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  
+</body>
+  <script src="./js/scripts.js"></script>
+</html>

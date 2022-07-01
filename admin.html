@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+         
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <title>Sound Gardens - Painel Administrativo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="addEventsAdminPage()">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- <aside class="d-flex flex-column flex-shrink-0 p-3 bg-light col-2"> -->
+                
+                <a href="/" class="d-flex flex-column align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="d-flex fs-4 px-5">
+                        <img src="img/Sound-logo.png" alt="Gama Lounge" class="img-responsive">
+                    </span>
+                    <p class="text-center">Painel Administrativo</p>
+                </a>
+                
+                <hr>
+                <ul class="nav nav-pills flex-inline mb-auto justify-content-center">
+                    <li class="nav-item">
+                        <a href="./admin.html" class="nav-link active" style="background-color:#C2185B ; color: #fff";>
+                            Eventos
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="funcionarios.html" class="nav-link link-dark">
+                            Funcionários
+                        </a>
+                    </li>
+                    <li>
+                        <a href="usuario.html" class="nav-link link-dark">
+                            Usuários
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="nav-link link-dark">
+                            Landing Page
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+            <!-- </aside> -->
+            
+        </header>
+            <main class="col-9 p-5">
+                <div class="my-5">
+                    <h1>Gerenciamento de eventos</h1>
+
+                    <a href="cadastro-evento.html" class="btn btn-primary">Novo Evento</a>
+                    <button onclick="callbackEventoAleatorio()" class="btn btn-primary">Gerar Eventos Aleatórios</button>
+                </div>
+                <div class="table-responsive bd-example">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Titulo</th>
+                                <th scope="col">Atrações</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- EVENTOS SAO LISTADOS AQUI DINAMICAMENTE -->
+                        </tbody>
+
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- modal  -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Informações da Reserva</h5>
+              <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Reservas Totais:</label>
+                    <input type="text" class="form-control" id="reservasTotaisModal" disabled>
+                  </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Reservas Efetuadas:</label>
+                  <input type="text" class="form-control" id="reservasEfetuadas" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Reservas Restantes:</label>
+                 <input type="text" class="form-control" id="reservasRestantes" disabled>
+                </div>
+              </form>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">ID do Evento:</label>
+               <input type="text" class="form-control" id="event-id" disabled>
+              </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>   
+</body>
+<footer>
+    <hr>
+    <a href="/" class="d-flex flex-column align-items-center link-dark text-decoration-none">
+        <p class="text-center-footer"><p>© 2022 Gama Academy</p></p>
+    </a>
+</footer>
+<script src="./js/scripts.js"></script>
+</html>
