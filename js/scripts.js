@@ -464,11 +464,8 @@ async function verReservas(self) {
             reservasEfetuadas += Number(json[i].number_tickets)
         }
 
-        var reservasRestantes = (Number(reservasTotais) - Number(reservasEfetuadas))
-
-        document.getElementById('reservasTotaisModal').value = reservasTotais
         document.getElementById('reservasEfetuadas').value = reservasEfetuadas
-        document.getElementById('reservasRestantes').value = reservasRestantes
+        document.getElementById('reservasRestantes').value = reservasTotais
         document.getElementById('event-id').value = id
     })
 }
