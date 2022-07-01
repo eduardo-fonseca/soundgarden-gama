@@ -7,7 +7,7 @@ O servidor Node-JS é necessário para que seja executada todas as funcionalidad
 
 ## Instalando
 
-Obs.: É necessário antes de instalar este projeto, ter instalado o Node-JS: 
+Obs.: É necessário antes de executar este projeto, ter instalado o Node-JS: 
 * Node-JS (https://nodejs.org/en/)
 
 Após clonado o repositório em sua máquina, acesse a pasta "js" pelo seu terminal e execute o comando:
@@ -16,7 +16,7 @@ Após clonado o repositório em sua máquina, acesse a pasta "js" pelo seu termi
   node server.js
 ```
 
-Em seguida seu servidor estará rodando na porta 8443 e o site está pronto para ser executado corretamente.
+Em seguida seu servidor Node estará rodando na porta 8443 e o site está pronto para ser executado corretamente.
 
 #### Atenção
 
