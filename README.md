@@ -24,7 +24,7 @@ Após concluir esses passos, acesse seu diretório do localhost onde armazenou o
 
 
 ## Grupo
-Eduardo Fonseca
+Eduardo Fonseca -
 João Paulo
 
 ## Licença
